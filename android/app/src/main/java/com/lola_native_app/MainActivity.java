@@ -4,6 +4,11 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
+
+// REACT-NAVIGATION-SCREENS req.
+import android.os.Bundle;
+
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -13,6 +18,14 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "lola_native_app";
+  }
+  /**
+   * Necessary for react native navigation
+   * react-navigation-screens
+   */
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 
   /**
