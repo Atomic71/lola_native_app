@@ -1,49 +1,47 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {ScrollView, Text} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import {useWindowDimensions} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
+import LolaHeader from './src/components/LolaHeader';
+const Stack = createNativeStackNavigator();
+const HomeComponent = () => {
+  return (
+    <ScrollView>
+      <Text>Hello world</Text>
+    </ScrollView>
+  );
+};
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const {width} = useWindowDimensions();
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hide();
-    }, 300);
+    }, 3000);
   }, []);
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="home"
+        defaultScreenOptions={{
+          headerTitleStyle: {
+            width,
+          },
+        }}>
+        <Stack.Screen
+          name="home"
+          component={HomeComponent}
+          options={{
+            headerTitle: LolaHeader,
+            headerBackTitle: null,
+            headerBackVisible: false,
+            headerTitleStyle: {},
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
