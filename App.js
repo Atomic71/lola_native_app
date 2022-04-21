@@ -4,6 +4,7 @@ import React, {useEffect} from 'react';
 import {ScrollView, Text} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import {useWindowDimensions} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import LolaHeader from './src/components/LolaHeader';
 const Stack = createNativeStackNavigator();
@@ -22,26 +23,25 @@ const App = () => {
     }, 3000);
   }, []);
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="home"
-        defaultScreenOptions={{
-          headerTitleStyle: {
-            width,
-          },
-        }}>
-        <Stack.Screen
-          name="home"
-          component={HomeComponent}
-          options={{
-            headerTitle: LolaHeader,
-            headerBackTitle: null,
-            headerBackVisible: false,
-            headerTitleStyle: {},
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="home"
+          defaultScreenOptions={{
+            headerStyle: {
+              width,
+            },
+          }}>
+          <Stack.Screen
+            name="home"
+            component={HomeComponent}
+            options={{
+              header: LolaHeader,
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 
