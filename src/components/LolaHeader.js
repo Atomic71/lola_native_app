@@ -1,28 +1,32 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import LolaLogo from '../assets/logo.svg';
+import commonStyles from '../styles/commonStyles';
 import MenuButton from './common/buttons/MenuButton';
 import SearchButton from './common/buttons/SearchButton';
+import LolaCategories from './LolaCategories';
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flex: 1,
-    marginRight: 20,
-    paddingHorizontal: 10,
+    paddingLeft: 10,
+    paddingRight: 20,
+  },
+  mainNav: {
+    marginBottom: 20,
   },
 });
 
-const LolaHeader = () => {
+const LolaHeader = props => {
   return (
-    <View style={styles.container}>
-      <MenuButton />
-      <LolaLogo />
-      <SearchButton />
-    </View>
+    <SafeAreaView edges={['left', 'right', 'top']} style={styles.container}>
+      <View style={[commonStyles.spreadContainer, styles.mainNav]}>
+        <MenuButton />
+        <LolaLogo />
+        <SearchButton />
+      </View>
+      <LolaCategories />
+    </SafeAreaView>
   );
 };
 
