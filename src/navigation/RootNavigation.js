@@ -8,6 +8,7 @@ import LolaHeader from '../components/LolaHeader';
 import MenuModal from '../components/menu/MenuModal';
 import SearchModal from '../components/SearchModal';
 import {APP_ROUTES} from '../constants/routes';
+import AboutView from '../views/AboutView';
 import HomeView from '../views/HomeView';
 import TermsView from '../views/TermsView';
 
@@ -29,11 +30,8 @@ const RootNavigation = () => {
               animation: 'simple_push',
             }}>
             <Stack.Screen name={APP_ROUTES.home} component={HomeView} />
-            <Stack.Screen
-              name={APP_ROUTES.terms}
-              component={TermsView}
-              initialParams={{hideCategories: true}}
-            />
+            <Stack.Screen name={APP_ROUTES.terms} component={TermsView} />
+            <Stack.Screen name={APP_ROUTES.about} component={AboutView} />
           </Stack.Group>
           <Stack.Group
             screenOptions={{

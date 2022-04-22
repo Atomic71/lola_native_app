@@ -7,6 +7,14 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  gutter: {
+    marginBottom: 20,
+  },
+  flexRowItems: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   horizontalPadding: {
     paddingHorizontal: 20,
   },
@@ -23,5 +31,6 @@ export default StyleSheet.create({
   commonScreen: {
     backgroundColor: '#fff',
     paddingTop: 20,
+    flex: 1,
   },
 });

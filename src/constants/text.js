@@ -22,3 +22,17 @@ export const LAT_CYR = {
 export const TAC = {
   title: 'USLOVI KORISTENJA',
 };
+
+export const ABOUT = {
+  title: 'Sve sto zelimo jeste da budemo tu za Vas!',
+  content: [
+    'Lola je žena – oksimoron. Ne voli pompu, ali je zavidne oči stalno promatraju. Mijenja gumu na automobilu u visokim potpeticama. Rasplače se zbog filma, ali se životu smije u lice. U djetinjstvu je igrala fudbal sa dječacima. I pobjeđivala.',
+    'Lola magazin trudi se da Vam prenese važne, inspirativne i zanimljive priče u nekoliko grupa: one koje morate znati, one kojih Vam neće biti dosta i one koje ćete obožavati. Ekipa portala se sastoji iz ozbiljnih profesionalaca, kako u spisateljskom, tako i u tehničkom segmentu. Lolamagazin.com je portal za ženu sa velikim Ž. Ne bavimo se tračevima, već stavovima. Razbijamo stereotipe, mijenjamo medijsku i društvenu sliku i popravljamo svijet – red po red. Ukoliko Vam ove rečenice djeluju pretenciozno, pročitajte ih ponovo za godinu ili dvije.',
+    'Dobro došli.',
+  ],
+  social: {
+    title: 'PRATI NAS',
+    writeToUs: 'PISI NAM',
+    email: 'lola@dotmedia.ba',
+  },
+};
