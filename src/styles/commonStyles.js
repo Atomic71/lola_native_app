@@ -11,7 +11,7 @@ export default StyleSheet.create({
     paddingHorizontal: 20,
   },
   horizontalPaddingSmall: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
   },
   borderTop: {
     borderTopColor: '#000',
