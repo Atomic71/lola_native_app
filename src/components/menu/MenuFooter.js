@@ -9,6 +9,12 @@ const styles = StyleSheet.create({
   footerWrapper: {
     paddingTop: 18,
   },
+  controllerSpacing: {
+    marginBottom: 10,
+  },
+  controllerSpacingLarge: {
+    marginBottom: 40,
+  },
 });
 
 const MenuFooter = () => {
@@ -19,8 +25,8 @@ const MenuFooter = () => {
         commonStyles.horizontalPaddingSmall,
         styles.footerWrapper,
       ]}>
-      <TextSizeController />
-      <LatCyrController />
+      <TextSizeController style={styles.controllerSpacing} />
+      <LatCyrController style={styles.controllerSpacingLarge} />
       <LolaCopyright />
     </View>
   );

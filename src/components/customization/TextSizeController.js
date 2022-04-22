@@ -3,9 +3,9 @@ import {View} from 'react-native';
 import {TEXT_SIZE} from '../../constants/text';
 import {Body} from '../common/Typography';
 
-const TextSizeController = () => {
+const TextSizeController = props => {
   return (
-    <View>
+    <View {...props}>
       <Body content={TEXT_SIZE.title} />
     </View>
   );

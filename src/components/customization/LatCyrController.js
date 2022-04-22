@@ -3,9 +3,9 @@ import {View} from 'react-native';
 import {LAT_CYR} from '../../constants/text';
 import {Body} from '../common/Typography';
 
-const LatCyrController = () => {
+const LatCyrController = props => {
   return (
-    <View>
+    <View {...props}>
       <Body content={LAT_CYR.title} />
     </View>
   );
