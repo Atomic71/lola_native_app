@@ -17,7 +17,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const LolaHeader = ({navigation}) => {
+const LolaHeader = ({navigation, route, ...rest}) => {
+  console.log(navigation);
+  console.log(rest);
   return (
     <SafeAreaView edges={['left', 'right', 'top']} style={styles.container}>
       <View style={[commonStyles.spreadContainer, styles.mainNav]}>
@@ -25,7 +27,6 @@ const LolaHeader = ({navigation}) => {
         <LolaLogo />
         <SearchButton onPress={() => navigation.navigate('searchModal')} />
       </View>
-      <LolaCategories />
     </SafeAreaView>
   );
 };

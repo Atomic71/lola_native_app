@@ -1,3 +1,8 @@
+import {
+  CommonActions,
+  StackActions,
+  useNavigation,
+} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import {MENU} from '../../constants/text';
@@ -10,9 +15,19 @@ const styles = StyleSheet.create({
 });
 
 const MenuNavItems = () => {
-  return MENU.navItems.map(({text}) => (
-    <TouchableOpacity key={text}>
-      <Body styles={[styles.menuItem]} content={text} />
+  const {dispatch, getParent} = useNavigation();
+  const navigateToScreen = path => {
+    dispatch(StackActions.pop());
+    setTimeout(() => {
+      dispatch(CommonActions.navigate(path));
+    }, 300);
+  };
+  return MENU.navItems.map(({text, path}) => (
+    <TouchableOpacity
+      key={text}
+      style={[styles.menuItem]}
+      onPress={() => navigateToScreen(path)}>
+      <Body content={text} />
     </TouchableOpacity>
   ));
 };

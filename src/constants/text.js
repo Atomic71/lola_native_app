@@ -1,3 +1,5 @@
+import {APP_ROUTES} from './routes';
+
 export const COPYRIGHT = '© Copyright 2021 Lola Marazin. All rights reserved.';
 export const MENU = {
   title: 'MENI',
@@ -5,7 +7,7 @@ export const MENU = {
     {text: 'POCETNA', path: ''},
     {text: 'O LOLI', path: ''},
     {text: 'AUTORI', path: ''},
-    {text: 'USLOVI KORISTENJA', path: ''},
+    {text: 'USLOVI KORISTENJA', path: APP_ROUTES.terms},
   ],
 };
 export const TEXT_SIZE = {
@@ -15,4 +17,8 @@ export const TEXT_SIZE = {
 export const LAT_CYR = {
   title: 'PISMO: ',
   options: [{}],
+};
+
+export const TAC = {
+  title: 'USLOVI KORISTENJA',
 };

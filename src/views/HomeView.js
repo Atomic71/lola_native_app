@@ -1,11 +1,20 @@
 import React from 'react';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView, Text, View, StyleSheet} from 'react-native';
+import LolaCategories from '../components/LolaCategories';
+import commonStyles from '../styles/commonStyles';
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+  },
+});
 
 const HomeView = () => {
   return (
-    <ScrollView>
-      <Text>Hello world</Text>
-    </ScrollView>
+    <View style={[styles.container, commonStyles.horizontalPadding]}>
+      <LolaCategories />
+      {/* <ScrollView style={{}}></ScrollView> */}
+    </View>
   );
 };
 
