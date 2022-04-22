@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import commonStyles from '../../styles/commonStyles';
-import CloseButton from './buttons/CloseButton';
+import {CloseButton} from './Buttons';
 
 const styles = StyleSheet.create({
   modalHeader: {

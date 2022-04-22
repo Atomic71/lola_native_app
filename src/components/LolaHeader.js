@@ -3,8 +3,8 @@ import {StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import LolaLogo from '../assets/logo.svg';
 import commonStyles from '../styles/commonStyles';
-import MenuButton from './common/buttons/MenuButton';
-import SearchButton from './common/buttons/SearchButton';
+import {MenuButton, SearchButton} from './common/Buttons';
+
 import LolaCategories from './LolaCategories';
 
 const styles = StyleSheet.create({
