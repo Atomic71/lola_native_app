@@ -10,4 +10,14 @@ export default StyleSheet.create({
   horizontalPadding: {
     paddingHorizontal: 20,
   },
+  horizontalPaddingSmall: {
+    paddingHorizontal: 10,
+  },
+  borderTop: {
+    borderTopColor: '#000',
+    borderTopWidth: 1,
+  },
+  centeredText: {
+    textAlign: 'center',
+  },
 });
