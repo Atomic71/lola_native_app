@@ -7,4 +7,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  horizontalPadding: {
+    paddingHorizontal: 20,
+  },
 });
