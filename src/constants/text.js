@@ -36,3 +36,8 @@ export const ABOUT = {
     email: 'lola@dotmedia.ba',
   },
 };
+
+export const SEARCH = {
+  title: 'Sta zelite danas da procitate?',
+  previousSearch: 'PRETHODNE PRETRAGE',
+};

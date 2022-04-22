@@ -21,6 +21,9 @@ export default StyleSheet.create({
   horizontalPaddingSmall: {
     paddingHorizontal: 15,
   },
+  horizontalPaddingTiny: {
+    paddingHorizontal: 10,
+  },
   borderTop: {
     borderTopColor: '#000',
     borderTopWidth: 1,
@@ -32,5 +35,11 @@ export default StyleSheet.create({
     backgroundColor: '#fff',
     paddingTop: 20,
     flex: 1,
+  },
+  skewLeftBorder: {
+    borderTopLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 20,
+    borderTopRightRadius: 20,
   },
 });

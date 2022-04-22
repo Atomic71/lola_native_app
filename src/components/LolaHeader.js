@@ -5,8 +5,6 @@ import LolaLogo from '../assets/logo.svg';
 import commonStyles from '../styles/commonStyles';
 import {MenuButton, SearchButton} from './common/Buttons';
 
-import LolaCategories from './LolaCategories';
-
 const styles = StyleSheet.create({
   container: {
     paddingLeft: 10,
