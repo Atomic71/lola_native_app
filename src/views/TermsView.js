@@ -6,10 +6,6 @@ import {TAC} from '../constants/text';
 import commonStyles from '../styles/commonStyles';
 
 const viewStyles = StyleSheet.create({
-  view: {
-    backgroundColor: '#fff',
-    paddingTop: 20,
-  },
   viewTitle: {
     marginBottom: 20,
   },
@@ -43,7 +39,8 @@ const TermsSection = ({text, title, subsection, points, styles}) => {
 
 const TermsView = () => {
   return (
-    <ScrollView style={[commonStyles.horizontalPaddingSmall, viewStyles.view]}>
+    <ScrollView
+      style={[commonStyles.horizontalPaddingSmall, commonStyles.commonScreen]}>
       <Title content={TAC.title} styles={[viewStyles.viewTitle]} />
       {TERMS_SECTIONS.map((termContent, i) => {
         return (

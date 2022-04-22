@@ -20,4 +20,8 @@ export default StyleSheet.create({
   centeredText: {
     textAlign: 'center',
   },
+  commonScreen: {
+    backgroundColor: '#fff',
+    paddingTop: 20,
+  },
 });
