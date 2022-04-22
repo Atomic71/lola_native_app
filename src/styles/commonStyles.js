@@ -42,4 +42,8 @@ export default StyleSheet.create({
     borderBottomLeftRadius: 20,
     borderTopRightRadius: 20,
   },
+  wrap: {
+    flexWrap: 'wrap',
+    flex: 1,
+  },
 });
