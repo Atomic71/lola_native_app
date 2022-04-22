@@ -17,13 +17,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const LolaHeader = props => {
+const LolaHeader = ({navigation}) => {
   return (
     <SafeAreaView edges={['left', 'right', 'top']} style={styles.container}>
       <View style={[commonStyles.spreadContainer, styles.mainNav]}>
-        <MenuButton />
+        <MenuButton onPress={() => navigation.navigate('menuModal')} />
         <LolaLogo />
-        <SearchButton />
+        <SearchButton onPress={() => navigation.navigate('searchModal')} />
       </View>
       <LolaCategories />
     </SafeAreaView>
