@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 
 const MenuNavItems = () => {
   return MENU.navItems.map(({text}) => (
-    <TouchableOpacity>
+    <TouchableOpacity key={text}>
       <Body styles={[styles.menuItem]} content={text} />
     </TouchableOpacity>
   ));
