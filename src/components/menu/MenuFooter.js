@@ -19,12 +19,7 @@ const styles = StyleSheet.create({
 
 const MenuFooter = () => {
   return (
-    <View
-      style={[
-        commonStyles.borderTop,
-        commonStyles.horizontalPaddingSmall,
-        styles.footerWrapper,
-      ]}>
+    <View style={[commonStyles.borderTop, styles.footerWrapper]}>
       <TextSizeController style={styles.controllerSpacing} />
       <LatCyrController style={styles.controllerSpacingLarge} />
       <LolaCopyright />

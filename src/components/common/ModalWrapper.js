@@ -26,7 +26,9 @@ const ModalWrapper = ({children, footer, title}) => {
         </View>
         <View style={[commonStyles.horizontalPaddingSmall]}>{children}</View>
       </ScrollView>
-      {footer ? footer() : null}
+      <View style={commonStyles.horizontalPaddingSmall}>
+        {footer ? footer() : null}
+      </View>
     </SafeAreaView>
   );
 };
