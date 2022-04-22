@@ -5,7 +5,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
 import ModalHeader from '../components/common/ModalHeader';
 import LolaHeader from '../components/LolaHeader';
-import MenuModal from '../components/MenuModal';
+import MenuModal from '../components/menu/MenuModal';
 import SearchModal from '../components/SearchModal';
 import HomeView from '../views/HomeView';
 
