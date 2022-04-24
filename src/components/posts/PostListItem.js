@@ -1,34 +1,64 @@
 import React from 'react';
-import {StyleSheet, View, Image} from 'react-native';
+import {Image, StyleSheet, View, Text} from 'react-native';
 import commonStyles from '../../styles/commonStyles';
-import {Subtitle} from '../common/Typography';
+import {Body, SmallText, Subtitle} from '../common/Typography';
 
 const styles = StyleSheet.create({
-  img: {
+  postImg: {
     height: 150,
     width: 150,
+    marginRight: 10,
+  },
+  authorImg: {
+    height: 38,
+    width: 38,
+    borderRadius: 100,
+    marginRight: 10,
   },
   wrapper: {
     borderColor: '#252932',
     borderWidth: 1,
-    display: 'flex',
     flexDirection: 'row',
+  },
+  detailWrapper: {
+    marginBottom: 10,
+    flexShrink: 1,
+  },
+  title: {
+    marginBottom: 3,
+  },
+  postInfoWrapper: {
+    paddingVertical: 10,
+    flexShrink: 1,
   },
 });
 
-const PostListItemAuthor = ({author}) => {
-  return <View></View>;
-};
-
-const PostListItem = ({coverImg, author, title}) => {
+const PostListItem = ({
+  coverImg,
+  authorName,
+  authorImg,
+  title,
+  date,
+  wrapperStyles,
+}) => {
   return (
-    <View style={[commonStyles.skewLeftBorder, styles.wrapper]}>
+    <View style={[commonStyles.skewLeftBorder, styles.wrapper, wrapperStyles]}>
       <Image
         source={{uri: coverImg}}
-        style={[commonStyles.skewLeftBorder, styles.img]}
+        style={[commonStyles.skewLeftBorder, styles.postImg]}
       />
-      <View style={[commonStyles.horizontalPaddingSmall]}>
-        <Subtitle content={title} styles={[commonStyles.wrap]} />
+      <View style={[styles.postInfoWrapper]}>
+        <View style={{flexDirection: 'row'}}>
+          <Image source={{uri: authorImg}} style={[styles.authorImg]} />
+          <View style={styles.detailWrapper}>
+            <Body
+              content={authorName + ' ' + authorName + ' ' + authorName}
+              styles={[styles.title, {flex: 'row', flexWrap: 'wrap'}]}
+            />
+            <SmallText content={date} />
+          </View>
+        </View>
+        <Subtitle num content={title + title + title} numberOfLines={3} />
       </View>
     </View>
   );
