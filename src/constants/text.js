@@ -1,5 +1,9 @@
 import {APP_ROUTES} from './routes';
 
+export const COMMON = {
+  loading: 'Ucitava...',
+};
+
 export const COPYRIGHT = '© Copyright 2021 Lola Marazin. All rights reserved.';
 export const MENU = {
   title: 'MENI',
@@ -40,4 +44,8 @@ export const ABOUT = {
 export const SEARCH = {
   title: 'Sta zelite danas da procitate?',
   previousSearch: 'PRETHODNE PRETRAGE',
+};
+
+export const AUTHORS = {
+  title: 'Autori',
 };
