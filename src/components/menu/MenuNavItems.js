@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 });
 
 const MenuNavItems = () => {
-  const {dispatch, getParent} = useNavigation();
+  const {dispatch} = useNavigation();
   const navigateToScreen = path => {
     dispatch(StackActions.pop());
     setTimeout(() => {
