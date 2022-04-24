@@ -1,11 +1,16 @@
+import {StackActions, useNavigation} from '@react-navigation/native';
 import dayjs from 'dayjs';
 import React from 'react';
 import {View} from 'react-native';
+import {APP_ROUTES} from '../../constants/routes';
 import commonStyles from '../../styles/commonStyles';
 import {Body} from '../common/Typography';
 import PostListItem from './PostListItem';
 
 const PostList = ({posts, hideAuthorInfo, title}) => {
+  const {dispatch} = useNavigation();
+  const handlePostPress = postId =>
+    dispatch(StackActions.push(APP_ROUTES.post, {postId}));
   return (
     <View>
       {title && (
@@ -13,6 +18,7 @@ const PostList = ({posts, hideAuthorInfo, title}) => {
       )}
       {posts.map(post => (
         <PostListItem
+          onPostPress={() => handlePostPress(post.id)}
           wrapperStyles={[commonStyles.gutter]}
           {...post}
           key={post.id}

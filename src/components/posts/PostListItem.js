@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, View, Text} from 'react-native';
+import {Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 import commonStyles from '../../styles/commonStyles';
 import {Body, SmallText, Subtitle} from '../common/Typography';
 
@@ -46,9 +46,12 @@ const PostListItem = ({
   date,
   wrapperStyles,
   hideAuthorInfo,
+  onPostPress,
 }) => {
   return (
-    <View style={[commonStyles.skewLeftBorder, styles.wrapper, wrapperStyles]}>
+    <TouchableOpacity
+      onPress={onPostPress}
+      style={[commonStyles.skewLeftBorder, styles.wrapper, wrapperStyles]}>
       <Image
         source={{uri: coverImg}}
         style={[
@@ -63,7 +66,7 @@ const PostListItem = ({
             <View style={styles.detailWrapper}>
               <Body
                 content={authorName + ' ' + authorName + ' ' + authorName}
-                styles={[styles.title, {flex: 'row', flexWrap: 'wrap'}]}
+                styles={[styles.title, {flexWrap: 'wrap'}]}
               />
               <SmallText content={date} />
             </View>
@@ -74,7 +77,7 @@ const PostListItem = ({
           numberOfLines={hideAuthorInfo ? 4 : 3}
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
