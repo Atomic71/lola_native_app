@@ -37,7 +37,11 @@ const RootNavigation = () => {
             <Stack.Screen name={APP_ROUTES.terms} component={TermsView} />
             <Stack.Screen name={APP_ROUTES.about} component={AboutView} />
             <Stack.Screen name={APP_ROUTES.authors} component={AuthorsView} />
-            <Stack.Screen name={APP_ROUTES.author} component={AuthorView} />
+            <Stack.Screen
+              name={APP_ROUTES.author}
+              component={AuthorView}
+              options={{headerShown: false}}
+            />
             <Stack.Screen name={APP_ROUTES.post} component={PostView} />
             <Stack.Screen name={APP_ROUTES.category} component={CategoryView} />
           </Stack.Group>
