@@ -9,7 +9,7 @@ import useAuthors from '../hooks/useAuthors';
 import commonStyles from '../styles/commonStyles';
 
 const AuthorsView = ({navigation}) => {
-  const onAuthorPress = ({authorId}) =>
+  const onAuthorPress = authorId =>
     navigation.dispatch(
       CommonActions.navigate({name: APP_ROUTES.author, params: {authorId}}),
     );
