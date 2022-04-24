@@ -2,8 +2,23 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   // TRULY RUSABLE STYLES:
+  shrunkView: {
+    flexShrink: 1,
+  },
   roundItem: {
     borderRadius: 50,
+  },
+  skewLeftBorder: {
+    borderTopLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+  skewRightBorder: {
+    borderTopLeftRadius: 60,
+    borderBottomRightRadius: 60,
+    borderBottomLeftRadius: 5,
+    borderTopRightRadius: 5,
   },
 
   spreadContainer: {
@@ -40,12 +55,7 @@ export default StyleSheet.create({
     paddingTop: 20,
     flex: 1,
   },
-  skewLeftBorder: {
-    borderTopLeftRadius: 5,
-    borderBottomRightRadius: 5,
-    borderBottomLeftRadius: 20,
-    borderTopRightRadius: 20,
-  },
+
   wrap: {
     flexWrap: 'wrap',
     flex: 1,
