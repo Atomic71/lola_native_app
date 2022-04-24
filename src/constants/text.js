@@ -10,7 +10,7 @@ export const MENU = {
   navItems: [
     {text: 'POCETNA', path: APP_ROUTES.home},
     {text: 'O LOLI', path: APP_ROUTES.about},
-    {text: 'AUTORI', path: ''},
+    {text: 'AUTORI', path: APP_ROUTES.authors},
     {text: 'USLOVI KORISTENJA', path: APP_ROUTES.terms},
   ],
 };
@@ -48,4 +48,8 @@ export const SEARCH = {
 
 export const AUTHORS = {
   title: 'Autori',
+};
+export const AUTHOR = {
+  about: 'O MENI',
+  posts: 'POSTOVI',
 };
