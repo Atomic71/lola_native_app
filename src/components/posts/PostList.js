@@ -1,24 +1,8 @@
 import dayjs from 'dayjs';
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import commonStyles from '../../styles/commonStyles';
 import PostListItem from './PostListItem';
-
-const styles = StyleSheet.create({
-  listItemStyles: {
-    marginBottom: 10,
-  },
-});
-
-const renderItem = ({
-  item: {authorName, coverImg, title, date, authorImg, id},
-}) => (
-  <PostListItem
-    key={id}
-    wrapperStyles={styles.listItemStyles}
-    {...{authorName, coverImg, title, date, authorImg}}
-  />
-);
 
 const PostList = ({posts}) => {
   return (
