@@ -2,6 +2,7 @@ import {APP_ROUTES} from './routes';
 
 export const COMMON = {
   loading: 'Ucitava...',
+  posts: 'POSTOVI',
 };
 
 export const COPYRIGHT = '© Copyright 2021 Lola Marazin. All rights reserved.';
