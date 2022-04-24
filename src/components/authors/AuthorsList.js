@@ -40,12 +40,12 @@ const AuthorTitle = ({title}) => (
 );
 
 const AuthorsList = ({authors, onAuthorPress}) => {
+  const getHandleAuthorPress = authorId => () => onAuthorPress(authorId);
   return authors.map(author => {
-    const handleAuthorPress = () => onAuthorPress({authorId: author.id});
     return (
       <TouchableOpacity
         key={author.id}
-        onPress={handleAuthorPress}
+        onPress={getHandleAuthorPress(author.id)}
         style={authorWrapperStyles}>
         <Image
           source={{uri: author.authorImg}}
