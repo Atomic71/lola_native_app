@@ -1,18 +1,38 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
+import {
+  TYPOGRAPHY_DICT,
+  TYPOGRAPHY_KEYS,
+} from '../../constants/typographyThemes';
+import {useTheme} from '../../context/ThemeContext';
 
-export const Body = ({content, styles = []}) => {
-  return <Text style={[...styles]}>{content}</Text>;
+const createStyles = theme => {
+  return StyleSheet.create(theme);
 };
-export const SmallText = ({content, styles = []}) => {
-  return <Text style={[...styles]}>{content}</Text>;
-};
-export const Title = ({content, styles = []}) => {
-  return <Text style={[...styles]}>{content}</Text>;
-};
-export const Subtitle = ({content, styles = []}) => {
-  return <Text style={[...styles]}>{content}</Text>;
-};
-export const LargeText = ({content, styles = []}) => {
-  return <Text style={[...styles]}>{content}</Text>;
-};
+
+const createText = themeKey =>
+  function TextComponent({textStyles = [], content, numberOfLines}) {
+    const {typographyThemeKey} = useTheme();
+
+    const themeStyles = React.useMemo(
+      () => createStyles(TYPOGRAPHY_DICT[typographyThemeKey].themeConfig),
+      [typographyThemeKey],
+    );
+
+    return (
+      <Text
+        style={[...textStyles, themeStyles[themeKey]]}
+        numberOfLines={numberOfLines}>
+        {content}
+      </Text>
+    );
+  };
+
+const {TITLE, SUBTTITLE, BODY, SMALL_TEXT, LARGE_TEXT} = TYPOGRAPHY_KEYS;
+
+export const Title = createText(TITLE);
+export const Subtitle = createText(SUBTTITLE);
+
+export const Body = createText(BODY);
+export const SmallText = createText(SMALL_TEXT);
+export const LargeText = createText(LARGE_TEXT);
