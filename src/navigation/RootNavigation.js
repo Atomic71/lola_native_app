@@ -9,7 +9,11 @@ import MenuModal from '../components/menu/MenuModal';
 import SearchModal from '../components/SearchModal';
 import {APP_ROUTES} from '../constants/routes';
 import AboutView from '../views/AboutView';
+import AuthorsView from '../views/AuthorsView';
+import AuthorView from '../views/AuthorView';
+import CategoryView from '../views/CategoryView';
 import HomeView from '../views/HomeView';
+import PostView from '../views/PostView';
 import TermsView from '../views/TermsView';
 
 const Stack = createNativeStackNavigator();
@@ -32,6 +36,10 @@ const RootNavigation = () => {
             <Stack.Screen name={APP_ROUTES.home} component={HomeView} />
             <Stack.Screen name={APP_ROUTES.terms} component={TermsView} />
             <Stack.Screen name={APP_ROUTES.about} component={AboutView} />
+            <Stack.Screen name={APP_ROUTES.authors} component={AuthorsView} />
+            <Stack.Screen name={APP_ROUTES.author} component={AuthorView} />
+            <Stack.Screen name={APP_ROUTES.post} component={PostView} />
+            <Stack.Screen name={APP_ROUTES.category} component={CategoryView} />
           </Stack.Group>
           <Stack.Group
             screenOptions={{

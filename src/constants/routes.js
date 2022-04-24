@@ -3,4 +3,7 @@ export const APP_ROUTES = {
   home: 'home',
   about: 'about',
   authors: 'authors',
+  author: 'author',
+  post: 'post',
+  category: 'category',
 };
