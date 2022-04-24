@@ -11,7 +11,6 @@ export default StyleSheet.create({
     marginBottom: 20,
   },
   flexRowItems: {
-    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -45,5 +44,9 @@ export default StyleSheet.create({
   wrap: {
     flexWrap: 'wrap',
     flex: 1,
+  },
+  standardBorder: {
+    borderColor: '#252932',
+    borderWidth: 1,
   },
 });
