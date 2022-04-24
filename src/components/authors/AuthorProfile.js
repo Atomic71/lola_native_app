@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     justifyContent: 'center',
-    textAlign: 'center',
   },
   authorImgContainer: {
     justifyContent: 'center',
