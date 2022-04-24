@@ -6,6 +6,7 @@ import SplashScreen from 'react-native-splash-screen';
 import ModalHeader from '../components/common/ModalHeader';
 import LolaHeader from '../components/LolaHeader';
 import MenuModal from '../components/menu/MenuModal';
+import CategoryHeader from '../components/screenHeaders/CategoryHeader';
 import SearchModal from '../components/SearchModal';
 import {APP_ROUTES} from '../constants/routes';
 import AboutView from '../views/AboutView';
@@ -43,7 +44,13 @@ const RootNavigation = () => {
               options={{headerShown: false}}
             />
             <Stack.Screen name={APP_ROUTES.post} component={PostView} />
-            <Stack.Screen name={APP_ROUTES.category} component={CategoryView} />
+            <Stack.Screen
+              name={APP_ROUTES.category}
+              component={CategoryView}
+              options={{
+                header: CategoryHeader,
+              }}
+            />
           </Stack.Group>
           <Stack.Group
             screenOptions={{
