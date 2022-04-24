@@ -1,6 +1,11 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  // TRULY RUSABLE STYLES:
+  roundItem: {
+    borderRadius: 50,
+  },
+
   spreadContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -48,5 +53,8 @@ export default StyleSheet.create({
   standardBorder: {
     borderColor: '#252932',
     borderWidth: 1,
+  },
+  gutterSmall: {
+    marginBottom: 10,
   },
 });

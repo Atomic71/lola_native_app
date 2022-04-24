@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
+import commonStyles from '../../styles/commonStyles';
 import PostListItem from './PostListItem';
 
 const styles = StyleSheet.create({
@@ -21,11 +22,15 @@ const renderItem = ({
 
 const PostList = ({posts}) => {
   return (
-    <FlatList
-      renderItem={renderItem}
-      data={posts}
-      keyExtractor={item => item.id}
-    />
+    <View>
+      {posts.map(post => (
+        <PostListItem
+          wrapperStyles={[commonStyles.gutter]}
+          {...post}
+          key={post.id}
+        />
+      ))}
+    </View>
   );
 };
 

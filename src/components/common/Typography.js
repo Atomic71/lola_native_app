@@ -22,7 +22,8 @@ const createText = themeKey =>
     return (
       <Text
         style={[...textStyles, themeStyles[themeKey]]}
-        numberOfLines={numberOfLines}>
+        numberOfLines={numberOfLines}
+        ellipsizeMode="tail">
         {content}
       </Text>
     );
