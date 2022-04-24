@@ -1,17 +1,22 @@
 import dayjs from 'dayjs';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import commonStyles from '../../styles/commonStyles';
+import {Body} from '../common/Typography';
 import PostListItem from './PostListItem';
 
-const PostList = ({posts}) => {
+const PostList = ({posts, hideAuthorInfo, title}) => {
   return (
     <View>
+      {title && (
+        <Body content={title} textStyles={[commonStyles.gutterSmall]} />
+      )}
       {posts.map(post => (
         <PostListItem
           wrapperStyles={[commonStyles.gutter]}
           {...post}
           key={post.id}
+          hideAuthorInfo={hideAuthorInfo}
         />
       ))}
     </View>

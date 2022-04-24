@@ -9,6 +9,11 @@ const styles = StyleSheet.create({
     width: 150,
     marginRight: 10,
   },
+  postImgSmall: {
+    height: 120,
+    width: 150,
+    marginRight: 10,
+  },
   authorImg: {
     height: 38,
     width: 38,
@@ -40,25 +45,34 @@ const PostListItem = ({
   title,
   date,
   wrapperStyles,
+  hideAuthorInfo,
 }) => {
   return (
     <View style={[commonStyles.skewLeftBorder, styles.wrapper, wrapperStyles]}>
       <Image
         source={{uri: coverImg}}
-        style={[commonStyles.skewLeftBorder, styles.postImg]}
+        style={[
+          commonStyles.skewLeftBorder,
+          hideAuthorInfo ? styles.postImgSmall : styles.postImg,
+        ]}
       />
       <View style={[styles.postInfoWrapper]}>
-        <View style={{flexDirection: 'row'}}>
-          <Image source={{uri: authorImg}} style={[styles.authorImg]} />
-          <View style={styles.detailWrapper}>
-            <Body
-              content={authorName + ' ' + authorName + ' ' + authorName}
-              styles={[styles.title, {flex: 'row', flexWrap: 'wrap'}]}
-            />
-            <SmallText content={date} />
+        {!hideAuthorInfo && (
+          <View style={{flexDirection: 'row'}}>
+            <Image source={{uri: authorImg}} style={[styles.authorImg]} />
+            <View style={styles.detailWrapper}>
+              <Body
+                content={authorName + ' ' + authorName + ' ' + authorName}
+                styles={[styles.title, {flex: 'row', flexWrap: 'wrap'}]}
+              />
+              <SmallText content={date} />
+            </View>
           </View>
-        </View>
-        <Subtitle num content={title + title + title} numberOfLines={3} />
+        )}
+        <Subtitle
+          content={title + title + title}
+          numberOfLines={hideAuthorInfo ? 4 : 3}
+        />
       </View>
     </View>
   );
