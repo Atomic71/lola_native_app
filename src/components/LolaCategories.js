@@ -4,9 +4,9 @@ import categories from '../constants/categories';
 
 import commonStyles from '../styles/commonStyles';
 
-const LolaCategories = () => {
+const LolaCategories = ({wrapperStyles = []}) => {
   return (
-    <View style={commonStyles.spreadContainer}>
+    <View style={[commonStyles.spreadContainer, ...wrapperStyles]}>
       {categories.map(({image: SvgImg, key}) => {
         return (
           <TouchableOpacity key={key}>
