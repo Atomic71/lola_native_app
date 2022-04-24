@@ -24,7 +24,7 @@ export default StyleSheet.create({
   spreadContainer: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'space-between',
   },
   gutter: {
