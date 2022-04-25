@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
   authorTitle: {
     maxWidth: '90%',
+    width: '90%',
   },
 });
 
@@ -48,12 +49,12 @@ const AuthorsList = ({authors, onAuthorPress}) => {
         onPress={getHandleAuthorPress(author.id)}
         style={authorWrapperStyles}>
         <Image
-          source={{uri: author.authorImg}}
+          source={{uri: author.avatarUrl}}
           style={[commonStyles.roundItem, styles.authorImage]}
         />
         <View style={[commonStyles.shrunkView]}>
-          <AuthorTitle title={author.title} />
-          <Body content={author.shortBio} numberOfLines={4} />
+          <AuthorTitle title={author.name} />
+          <Body content={author.description} numberOfLines={4} />
         </View>
       </TouchableOpacity>
     );
