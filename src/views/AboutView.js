@@ -13,9 +13,13 @@ const AboutView = () => {
       edges={['bottom']}
       style={[commonStyles.horizontalPadding, commonStyles.commonScreen]}>
       <ScrollView style={[commonStyles.commonScreen]}>
-        <Title content={ABOUT.title} styles={[commonStyles.gutter]} />
+        <Title content={ABOUT.title} textStyles={[commonStyles.gutter]} />
         {ABOUT.content.map((contentItem, i) => (
-          <Body key={i} content={contentItem} styles={[commonStyles.gutter]} />
+          <Body
+            key={i}
+            content={contentItem}
+            textStyles={[commonStyles.gutter]}
+          />
         ))}
         <LolaSocial />
       </ScrollView>
