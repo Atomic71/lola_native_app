@@ -19,23 +19,21 @@ const styles = StyleSheet.create({
 });
 
 const AuthorProfile = ({author, wrapperStyles = []}) => {
-  console.log(author);
-
   return (
     <View style={[styles.authorContainer, ...wrapperStyles]}>
       <View style={[styles.authorImgContainer, commonStyles.gutter]}>
         <Image
-          source={{uri: author.authorImg}}
+          source={{uri: author.avatarUrl}}
           style={[styles.authorImg, commonStyles.gutterSmall]}
         />
 
         <Subtitle
-          content={author.title}
+          content={author.name}
           textStyles={[commonStyles.centeredText]}
         />
       </View>
       <Body content={AUTHOR.about} textStyles={[commonStyles.gutterSmall]} />
-      <Body content={author.shortBio} />
+      <Body content={author.description} />
     </View>
   );
 };
