@@ -10,9 +10,7 @@ import {TYPOGRAPHY_DICT} from '../constants/typographyThemes';
 
 const Context = createContext({
   typographyThemeKey: TYPOGRAPHY_DICT.THEME_NORMAL.key,
-  setTypographyTheme: () => {
-    console.log('called');
-  },
+  setTypographyTheme: () => {},
 });
 
 export const ThemeProvider = memo(props => {
