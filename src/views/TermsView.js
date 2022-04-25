@@ -1,6 +1,8 @@
 import React from 'react';
 import {ScrollView, View, StyleSheet} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {Body, Subtitle, Title} from '../components/common/Typography';
+import LolaCopyright from '../components/LolaCopyright';
 import {TERMS_SECTIONS} from '../constants/terms';
 import {TAC} from '../constants/text';
 import commonStyles from '../styles/commonStyles';
@@ -39,19 +41,23 @@ const TermsSection = ({text, title, subsection, points, styles}) => {
 
 const TermsView = () => {
   return (
-    <ScrollView
-      style={[commonStyles.horizontalPaddingSmall, commonStyles.commonScreen]}>
-      <Title content={TAC.title} styles={[viewStyles.viewTitle]} />
-      {TERMS_SECTIONS.map((termContent, i) => {
-        return (
-          <TermsSection
-            styles={[viewStyles.sectionWrapper]}
-            key={i}
-            {...termContent}
-          />
-        );
-      })}
-    </ScrollView>
+    <SafeAreaView
+      edges={['bottom', 'left', 'right']}
+      style={[commonStyles.commonScreen]}>
+      <ScrollView style={[commonStyles.horizontalPaddingSmall]}>
+        <Title content={TAC.title} styles={[viewStyles.viewTitle]} />
+        {TERMS_SECTIONS.map((termContent, i) => {
+          return (
+            <TermsSection
+              styles={[viewStyles.sectionWrapper]}
+              key={i}
+              {...termContent}
+            />
+          );
+        })}
+        <LolaCopyright />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 export default TermsView;
